@@ -74,11 +74,11 @@
 		"enabled": true
 	},
 	"navCard": {
-		"width": 280,
-		"height": 434,
+		"width": 301,
+		"height": 439,
 		"order": 2,
-		"offsetX": null,
-		"offsetY": null,
+		"offsetX": -524,
+		"offsetY": -290,
 		"enabled": true
 	},
 	"likePosition": {
