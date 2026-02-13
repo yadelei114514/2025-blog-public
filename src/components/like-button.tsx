@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import useSWR from 'swr'
 import { motion, AnimatePresence } from 'motion/react'
 import { Heart } from 'lucide-react'
 import clsx from 'clsx'
@@ -13,13 +12,15 @@ type LikeButtonProps = {
 	delay?: number
 }
 
-const ENDPOINT = 'https://blog-liker.yysuni1001.workers.dev/api/like'
+// 暂时禁用API调用
+// const ENDPOINT = 'https://blog-liker.yysuni1001.workers.dev/api/like'
 
 export default function LikeButton({ slug = 'yysuni', className }: LikeButtonProps) {
 	slug = BLOG_SLUG_KEY + slug
 	const [liked, setLiked] = useState(false)
 	const [justLiked, setJustLiked] = useState(false)
 	const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number }>>([])
+	const [count, setCount] = useState(0) // 本地状态管理点赞数
 
 	useEffect(() => {
 		if (justLiked) {
@@ -28,22 +29,11 @@ export default function LikeButton({ slug = 'yysuni', className }: LikeButtonPro
 		}
 	}, [justLiked])
 
-	const fetcher = useCallback(async (url: string): Promise<number | null> => {
-		const res = await fetch(url, { method: 'GET', cache: 'no-store' })
-		if (!res.ok) return null
-		const data = await res.json().catch(() => ({}))
-		return typeof data?.count === 'number' ? data.count : null
-	}, [])
-
-	const { data: fetchedCount, mutate } = useSWR(slug ? `${ENDPOINT}?slug=${encodeURIComponent(slug)}` : null, fetcher, {
-		revalidateOnFocus: false,
-		dedupingInterval: 1000 * 10
-	})
-
-	const handleLike = useCallback(async () => {
+	const handleLike = useCallback(() => {
 		if (!slug) return
 		setLiked(true)
 		setJustLiked(true)
+		setCount(prev => prev + 1) // 本地增加点赞数
 
 		// Create particle effects
 		const newParticles = Array.from({ length: 6 }, (_, i) => ({
@@ -58,31 +48,7 @@ export default function LikeButton({ slug = 'yysuni', className }: LikeButtonPro
 
 		// 显示感谢点赞的提示
 		toast('💕感谢点赞！！💕😘')
-		
-		// 暂时注释掉API调用
-		/*
-		try {
-			const url = `${ENDPOINT}?slug=${encodeURIComponent(slug)}`
-			const res = await fetch(url, { method: 'POST' })
-			const data = await res.json().catch(() => ({}))
-			if (data.reason == 'rate_limited') {
-				toast('谢谢啦😘，今天已经不能再点赞啦💕')
-			} else {
-				// 显示感谢点赞的提示
-				toast('感谢点赞！！😊')
-			}
-			const value = typeof data?.count === 'number' ? data.count : (fetchedCount ?? 0) + 1
-			await mutate(value, { revalidate: false })
-		} catch {
-			// 即使出错也显示感谢提示
-			toast('感谢点赞！！😊')
-			const value = (fetchedCount ?? 0) + 1
-			await mutate(value, { revalidate: false })
-		}
-		*/
 	}, [slug])
-
-	const count = typeof fetchedCount === 'number' ? fetchedCount : null
 
 	return (
 		<motion.button
