@@ -13,7 +13,13 @@ type LikeButtonProps = {
 }
 
 // 恢复API调用，使用新的后端接口
-const API_HOST = 'http://38.76.217.93:9991'
+// 根据当前页面协议动态选择API协议
+const getApiHost = () => {
+  const protocol = typeof window !== 'undefined' && window.location.protocol === 'https:' ? 'https:' : 'http:'
+  return `${protocol}//38.76.217.93:9991`
+}
+
+const API_HOST = getApiHost()
 const API_ENDPOINTS = {
   IP: `${API_HOST}/api/admin/like/ip`,
   LIKE: `${API_HOST}/api/admin/like`,
