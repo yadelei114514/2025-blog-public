@@ -85,6 +85,20 @@ export default function LikeButton({ slug = 'amis', className }: LikeButtonProps
 		setTimeout(() => setParticles([]), 1000)
 
 		try {
+			// 获取当前时间
+			const now = Date.now()
+			const oneDay = 24 * 60 * 60 * 1000
+			
+			// 检查是否已经点过赞（从localStorage获取）
+			const lastLikeTime = typeof window !== 'undefined' ? localStorage.getItem('last_like_time_' + slug) : null
+			
+			// 如果24小时内已经点过赞，直接显示限制提示
+			if (lastLikeTime && now - parseInt(lastLikeTime) < oneDay) {
+				toast('谢谢啦😘，今天已经不能再点赞啦💕')
+				setLoading(false)
+				return
+			}
+
 			// 获取IP
 			let ip = await getClientIp()
 
@@ -119,8 +133,16 @@ export default function LikeButton({ slug = 'amis', className }: LikeButtonProps
 			const data = await response.json()
 
 			if (data.data === -1) {
+				// 记录点赞时间
+				if (typeof window !== 'undefined') {
+					localStorage.setItem('last_like_time_' + slug, now.toString())
+				}
 				toast('谢谢啦😘，今天已经不能再点赞啦💕')
 			} else {
+				// 记录点赞时间
+				if (typeof window !== 'undefined') {
+					localStorage.setItem('last_like_time_' + slug, now.toString())
+				}
 				// 显示感谢点赞的提示
 				toast('💕感谢点赞！！💕😘')
 				// 更新点赞数
@@ -134,10 +156,12 @@ export default function LikeButton({ slug = 'amis', className }: LikeButtonProps
 		} catch (error) {
 			console.error('点赞失败:', error)
 			
-			// 检查是否已经点过赞（从localStorage获取）
-			const lastLikeTime = typeof window !== 'undefined' ? localStorage.getItem('last_like_time_' + slug) : null
+			// 获取当前时间
 			const now = Date.now()
 			const oneDay = 24 * 60 * 60 * 1000
+			
+			// 检查是否已经点过赞（从localStorage获取）
+			const lastLikeTime = typeof window !== 'undefined' ? localStorage.getItem('last_like_time_' + slug) : null
 			
 			// 如果24小时内已经点过赞，显示限制提示
 			if (lastLikeTime && now - parseInt(lastLikeTime) < oneDay) {
