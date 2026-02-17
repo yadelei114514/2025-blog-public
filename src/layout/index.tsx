@@ -40,6 +40,7 @@ export default function Layout({ children }: PropsWithChildren) {
 				}
 			/>
 			{currentBackgroundImage && (
+			<>
 				<div
 					className='fixed inset-0 z-0 overflow-hidden'
 					style={{
@@ -49,8 +50,12 @@ export default function Layout({ children }: PropsWithChildren) {
 						backgroundRepeat: 'no-repeat'
 					}}
 				/>
-			)}
-			<BlurredBubblesBackground colors={siteContent.backgroundColors} regenerateKey={regenerateKey} />
+				{siteContent.enableBackgroundBlur && (
+					<div className='fixed inset-0 z-0 overflow-hidden bg-white/20 backdrop-blur-lg' />
+				)}
+			</>
+		)}
+		<BlurredBubblesBackground colors={siteContent.backgroundColors} regenerateKey={regenerateKey} />
 
 			<main className='relative z-10 h-full'>
 				{children}

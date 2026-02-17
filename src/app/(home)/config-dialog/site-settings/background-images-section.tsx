@@ -123,6 +123,17 @@ export function BackgroundImagesSection({ formData, setFormData, backgroundImage
 					</button>
 				)}
 			</div>
+			{formData.currentBackgroundImageId && formData.currentBackgroundImageId.trim() && (
+				<div className='mb-3 flex items-center gap-2'>
+					<input
+						type='checkbox'
+						checked={formData.enableBackgroundBlur ?? false}
+						onChange={(e) => setFormData(prev => ({ ...prev, enableBackgroundBlur: e.target.checked }))}
+						className='h-4 w-4 rounded border-gray-300 text-brand focus:ring-brand'
+					/>
+					<label className='text-secondary text-xs'>启用毛玻璃效果</label>
+				</div>
+			)}
 			<input ref={backgroundInputRef} type='file' accept='image/*' className='hidden' onChange={handleBackgroundFileSelect} />
 
 			<div className='grid grid-cols-4 gap-3 max-sm:grid-cols-3'>
