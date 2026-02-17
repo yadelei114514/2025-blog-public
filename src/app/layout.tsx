@@ -275,6 +275,20 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 							}
 							if (target && target.href) {
 								log('Link click detected: ' + target.href, 'info');
+								
+								// 检查是否是站内链接
+								try {
+									var urlObj = new URL(target.href, window.location.origin);
+									// 如果是站内链接，直接允许
+									if (urlObj.hostname === window.location.hostname) {
+										log('Allowed internal link: ' + target.href, 'info');
+										return;
+									}
+								} catch (e) {
+									log('Invalid URL: ' + target.href, 'error');
+								}
+								
+								// 只对站外链接进行安全检查
 								if (!isSafeUrl(target.href)) {
 									log('Blocked unsafe link click: ' + target.href, 'error');
 									e.preventDefault();
