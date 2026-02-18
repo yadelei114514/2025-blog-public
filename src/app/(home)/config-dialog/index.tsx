@@ -224,7 +224,7 @@ export default function ConfigDialog({ open, onClose }: ConfigDialogProps) {
 		onClose()
 	}
 
-	const buttonText = isAuth ? t('toast.saveSuccess') : t('config.importKey')
+	const buttonText = isAuth ? t('config.save') : t('config.importKey')
 
 	const tabs: { id: TabType; label: string }[] = [
 		{ id: 'site', label: t('config.siteSettings') },

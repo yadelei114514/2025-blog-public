@@ -146,7 +146,7 @@ export default function BlogPage() {
 	}, [paginatedItems, displayMode, categoryList])
 
 	const selectedCount = selectedSlugs.size
-	const buttonText = isAuth ? t('toast.saveSuccess') : t('config.importKey')
+	const buttonText = isAuth ? t('config.save') : t('config.importKey')
 
 	const toggleEditMode = useCallback(() => {
 		if (editMode) {

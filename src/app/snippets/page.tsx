@@ -127,7 +127,7 @@ export default function Page() {
 		setNewSnippet('')
 	}
 
-	const buttonText = isAuth ? t('toast.saveSuccess') : t('config.importKey')
+	const buttonText = isAuth ? t('config.save') : t('config.importKey')
 
 	return (
 		<>
@@ -219,7 +219,7 @@ export default function Page() {
 						{t('config.cancel')}
 					</button>
 					<button onClick={applyManageChanges} className='brand-btn flex-1 justify-center px-4'>
-						{t('toast.saveSuccess')}
+						{t('config.save')}
 					</button>
 				</div>
 				</div>

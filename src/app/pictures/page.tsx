@@ -211,7 +211,7 @@ export default function Page() {
 		setIsEditMode(false)
 	}
 
-	const buttonText = isAuth ? t('toast.saveSuccess') : t('config.importKey')
+	const buttonText = isAuth ? t('config.save') : t('config.importKey')
 
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {

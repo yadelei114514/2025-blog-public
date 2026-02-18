@@ -53,7 +53,8 @@ const translations: Translations = {
       preview: '预览',
       cancel: '取消',
       saving: '保存中...',
-      importKey: '导入密钥'
+      importKey: '导入密钥',
+      save: '保存'
     },
     siteSettings: {
       siteMeta: {
