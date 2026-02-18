@@ -69,8 +69,8 @@
 		"height": 42,
 		"width": 180,
 		"order": 8,
-		"offsetX": 370,
-		"offsetY": -289,
+		"offsetX": 289,
+		"offsetY": -291,
 		"enabled": true
 	},
 	"navCard": {
