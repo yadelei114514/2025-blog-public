@@ -30,7 +30,7 @@ export default function CommentCard() {
 					<h3 className='mb-4 text-lg font-semibold'>{t('siteSettings.comment.title') || '评论'}</h3>
 					{/* 直接使用 WalineComments 组件 */}
 					{siteContent.waline?.serverURL && (
-						<WalineComments path={currentPath} />
+						<WalineComments path={currentPath} width={styles.width - 48} height={styles.height - 120} />
 					)}
 				</div>
 			</Card>

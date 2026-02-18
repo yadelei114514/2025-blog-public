@@ -8,7 +8,7 @@ import { useLanguage } from '@/i18n/context';
 // 导入 Waline 官方样式
 import '@waline/client/style';
 
-export default function WalineComments({ path }) {
+export default function WalineComments({ path, width, height }) {
   const walineInstanceRef = useRef(null);
   const containerRef = useRef(null);
   const { siteContent } = useConfigStore();
@@ -61,7 +61,7 @@ export default function WalineComments({ path }) {
   }, [path, language]); // 路径或语言变化时重新初始化
 
   return (
-    <div className="waline-comments">
+    <div className="waline-comments" style={{ width: width, height: height, overflow: 'auto' }}>
       <div ref={containerRef} />
     </div>
   );
