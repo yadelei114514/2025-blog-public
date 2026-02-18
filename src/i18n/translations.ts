@@ -37,6 +37,15 @@ const translations: Translations = {
       'en': 'English',
       'zh-TW': '繁體中文'
     },
+    weekdays: {
+      monday: '周一',
+      tuesday: '周二',
+      wednesday: '周三',
+      thursday: '周四',
+      friday: '周五',
+      saturday: '周六',
+      sunday: '周日'
+    },
     config: {
       siteSettings: '网站设置',
       colorConfig: '色彩配置',
@@ -312,6 +321,15 @@ const translations: Translations = {
       'en': 'English',
       'zh-TW': 'Traditional Chinese'
     },
+    weekdays: {
+      monday: 'Mon',
+      tuesday: 'Tue',
+      wednesday: 'Wed',
+      thursday: 'Thu',
+      friday: 'Fri',
+      saturday: 'Sat',
+      sunday: 'Sun'
+    },
     config: {
       siteSettings: 'Site Settings',
       colorConfig: 'Color Config',
@@ -586,6 +604,15 @@ const translations: Translations = {
       'zh-CN': '簡體中文',
       'en': 'English',
       'zh-TW': '繁體中文'
+    },
+    weekdays: {
+      monday: '周一',
+      tuesday: '周二',
+      wednesday: '周三',
+      thursday: '周四',
+      friday: '周五',
+      saturday: '周六',
+      sunday: '周日'
     },
     config: {
       siteSettings: '網站設定',

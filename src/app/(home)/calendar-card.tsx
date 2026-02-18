@@ -6,12 +6,14 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
 import { cn } from '@/lib/utils'
 import { HomeDraggableLayer } from './home-draggable-layer'
+import { useLanguage } from '@/i18n/context'
 
 dayjs.locale('zh-cn')
 
 export default function CalendarCard() {
 	const center = useCenterStore()
 	const { cardStyles, siteContent } = useConfigStore()
+	const { t } = useLanguage()
 	const now = dayjs()
 	const currentDate = now.date()
 	const firstDayOfMonth = now.startOf('month')
@@ -24,6 +26,17 @@ export default function CalendarCard() {
 
 	const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x + CARD_SPACING + hiCardStyles.width / 2
 	const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y - clockCardStyles.offset + CARD_SPACING
+
+	// 获取翻译后的星期几名称
+	const weekdays = [
+		t('weekdays.monday'),
+		t('weekdays.tuesday'),
+		t('weekdays.wednesday'),
+		t('weekdays.thursday'),
+		t('weekdays.friday'),
+		t('weekdays.saturday'),
+		t('weekdays.sunday')
+	]
 
 	return (
 		<HomeDraggableLayer cardKey='calendarCard' x={x} y={y} width={styles.width} height={styles.height}>
@@ -40,17 +53,17 @@ export default function CalendarCard() {
 				)}
 
 				<h3 className='text-secondary text-sm'>
-					{now.format('YYYY/M/D')} {now.format('ddd')}
+					{now.format('YYYY/M/D')} {weekdays[currentWeekday]}
 				</h3>
 				<ul className={cn('text-secondary mt-3 grid h-[206px] flex-1 grid-cols-7 gap-2 text-sm', (styles.height < 240 || styles.width < 240) && 'text-xs')}>
-					{new Array(7).fill(0).map((_, index) => {
-						const isCurrentWeekday = index === currentWeekday
-						return (
-							<li key={index} className={cn('flex items-center justify-center font-medium', isCurrentWeekday && 'text-brand')}>
-								{dates[index]}
-							</li>
-						)
-					})}
+						{new Array(7).fill(0).map((_, index) => {
+							const isCurrentWeekday = index === currentWeekday
+							return (
+								<li key={index} className={cn('flex items-center justify-center font-medium', isCurrentWeekday && 'text-brand')}>
+									{weekdays[index]}
+								</li>
+							)
+						})}
 
 					{new Array(firstDayWeekday).fill(0).map((_, index) => (
 						<li key={`empty-${index}`} />
@@ -71,4 +84,4 @@ export default function CalendarCard() {
 	)
 }
 
-const dates = ['一', '二', '三', '四', '五', '六', '日']
+
