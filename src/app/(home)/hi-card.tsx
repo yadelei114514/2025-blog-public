@@ -62,6 +62,12 @@ export default function HiCard() {
 					{language === 'zh-TW' && (
 						<>我是 <span className='text-linear text-[32px]'>{username}</span>，很高興認識你！</>
 					)}
+					{language === 'ja' && (
+						<>私は <span className='text-linear text-[32px]'>{username}</span> です、はじめまして！</>
+					)}
+					{language === 'ko' && (
+						<>저는 <span className='text-linear text-[32px]'>{username}</span>입니다, 만나서 반갑습니다!</>
+					)}
 				</h1>
 			</Card>
 		</HomeDraggableLayer>

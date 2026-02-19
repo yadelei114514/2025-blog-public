@@ -6,11 +6,13 @@ import { CARD_SPACING } from '@/consts'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { HomeDraggableLayer } from './home-draggable-layer'
+import { useLanguage } from '@/i18n/context'
 
 export default function ArticleCard() {
 	const center = useCenterStore()
 	const { cardStyles, siteContent } = useConfigStore()
 	const { blog, loading } = useLatestBlog()
+	const { t } = useLanguage()
 	const styles = cardStyles.articleCard
 	const hiCardStyles = cardStyles.hiCard
 	const socialButtonsStyles = cardStyles.socialButtons
@@ -32,7 +34,7 @@ export default function ArticleCard() {
 					</>
 				)}
 
-				<h2 className='text-secondary text-sm'>最新文章</h2>
+				<h2 className='text-secondary text-sm'>{t('home.articleCard.title')}</h2>
 
 				{loading ? (
 					<div className='flex h-[60px] items-center justify-center'>

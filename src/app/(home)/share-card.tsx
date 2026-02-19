@@ -8,6 +8,7 @@ import { CARD_SPACING } from '@/consts'
 import shareList from '@/app/share/list.json'
 import Link from 'next/link'
 import { HomeDraggableLayer } from './home-draggable-layer'
+import { useLanguage } from '@/i18n/context'
 
 type ShareItem = {
 	name: string
@@ -21,6 +22,7 @@ type ShareItem = {
 export default function ShareCard() {
 	const center = useCenterStore()
 	const { cardStyles, siteContent } = useConfigStore()
+	const { t } = useLanguage()
 	const [randomItem, setRandomItem] = useState<ShareItem | null>(null)
 	const styles = cardStyles.shareCard
 	const hiCardStyles = cardStyles.hiCard
@@ -52,7 +54,7 @@ export default function ShareCard() {
 					</>
 				)}
 
-				<h2 className='text-secondary text-sm'>随机推荐</h2>
+				<h2 className='text-secondary text-sm'>{t('home.shareCard.title')}</h2>
 
 				<Link href='/share' className='mt-2 block space-y-2'>
 					<div className='flex items-center'>

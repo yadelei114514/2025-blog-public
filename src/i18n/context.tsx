@@ -30,8 +30,24 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   useEffect(() => {
     // 从 localStorage 读取语言偏好
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && ['zh-CN', 'en', 'zh-TW'].includes(savedLanguage)) {
+    if (savedLanguage && ['zh-CN', 'en', 'zh-TW', 'ja', 'ko'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
+    } else {
+      // 检测用户系统语言
+      const userLang = navigator.language;
+      let defaultLang: Language = 'en';
+      
+      if (userLang.startsWith('zh-TW') || userLang.startsWith('zh-HK') || userLang.startsWith('zh-MO')) {
+        defaultLang = 'zh-TW';
+      } else if (userLang.startsWith('zh-CN') || userLang.startsWith('zh-SG') || userLang.startsWith('zh')) {
+        defaultLang = 'zh-CN';
+      } else if (userLang.startsWith('ja')) {
+        defaultLang = 'ja';
+      } else if (userLang.startsWith('ko')) {
+        defaultLang = 'ko';
+      }
+      
+      setLanguage(defaultLang);
     }
   }, []);
 

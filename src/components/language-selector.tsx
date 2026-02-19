@@ -5,10 +5,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@/i18n/context';
 import { Language } from '@/i18n/types';
 
-const languages: Array<{ code: Language; label: string; flag: string }> = [
-  { code: 'zh-CN', label: '简体中文', flag: '🇨🇳' },
-  { code: 'en', label: 'English', flag: '🇺🇸' },
-  { code: 'zh-TW', label: '繁體中文', flag: '🇨🇳' }
+const languages: Array<{ code: Language; label: string }> = [
+  { code: 'zh-CN', label: '简体中文' },
+  { code: 'en', label: 'English' },
+  { code: 'zh-TW', label: '繁體中文' },
+  { code: 'ja', label: '日本語' },
+  { code: 'ko', label: '한국어' }
 ];
 
 export default function LanguageSelector({ direction = 'down', mobile = false, onListOpen }: { direction?: 'up' | 'down'; mobile?: boolean; onListOpen?: (open: boolean) => void }) {
@@ -69,10 +71,10 @@ export default function LanguageSelector({ direction = 'down', mobile = false, o
 
         //这个是语言按钮
         className={mobile ? "card whitespace-nowrap flex items-center gap-2 rounded-full p-3" : "brand-btn whitespace-nowrap flex items-center gap-2"}
+        style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' }}
         // 这个是语言按钮（毛玻璃效果）
         // className={mobile ? "card language-selector-btn whitespace-nowrap flex items-center gap-2 rounded-full p-3" : "brand-btn language-selector-btn whitespace-nowrap flex items-center gap-2"}
       >
-        <span>{currentLanguage?.flag}</span>
         <span>{currentLanguage?.label.split(' ')[0]}</span>
       </motion.button>
 
@@ -90,11 +92,10 @@ export default function LanguageSelector({ direction = 'down', mobile = false, o
               <motion.button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
-                className={`w-full text-left px-4 py-2 flex items-center gap-2 transition-colors ${language === lang.code ? 'bg-brand/20 text-primary' : 'hover:bg-secondary/10'}`}
+                className={`w-full text-left px-4 py-2 flex items-center transition-colors ${language === lang.code ? 'bg-brand/20 text-primary' : 'hover:bg-secondary/10'}`}
                 whileHover={{ backgroundColor: language === lang.code ? 'rgba(var(--color-brand), 0.2)' : 'rgba(var(--color-secondary), 0.1)' }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>{lang.flag}</span>
                 <span>{lang.label}</span>
               </motion.button>
             ))}
