@@ -165,7 +165,7 @@ export function SocialButtonsSection({ formData, setFormData, socialButtonImageU
 								{ value: 'tg', label: t('siteSettings.socialButtons.types.tg') },
 								{ value: 'wechat', label: t('siteSettings.socialButtons.types.wechat') },
 								{ value: 'qq', label: t('siteSettings.socialButtons.types.qq') },
-											{ value: 'qqGroup', label: t('siteSettings.socialButtons.types.qq-group') },
+								{ value: 'qqGroup', label: t('siteSettings.socialButtons.types.qqGroup') },
 								{ value: 'facebook', label: t('siteSettings.socialButtons.types.facebook') },
 								{ value: 'tiktok', label: t('siteSettings.socialButtons.types.tiktok') },
 								{ value: 'instagram', label: t('siteSettings.socialButtons.types.instagram') },
