@@ -1,28 +1,21 @@
 {
 	"meta": {
-		"title": "Amis's Blog",
-		"description": "Amis 的个人博客，记录开发、探索、笔记。 更新代码仓库。",
-		"username": "Amis"
+		"title": "烤鸭の雪屋",
+		"description": "美味烤鸭の神奇雪屋，记录烤鸭的日常趣事",
+		"username": "美味烤鸭"
 	},
 	"theme": {
-		"colorBrand": "#16DB9F",
-		"colorPrimary": "#334f52",
-		"colorSecondary": "#7b888e",
-		"colorBrandSecondary": "#1fc9e7",
-		"colorBg": "#eeeeee",
-		"colorBorder": "#ffffff",
-		"colorCard": "#ffffff66",
-		"colorArticle": "#ffffffcc"
+		"colorBrand": "#2a48f3",
+		"colorPrimary": "#e6e8e8",
+		"colorSecondary": "#acadae",
+		"colorBrandSecondary": "#51d0b9",
+		"colorBg": "#0a051f",
+		"colorBorder": "#8a8a8a5e",
+		"colorCard": "#ffffff0e",
+		"colorArticle": "#6f6f6f33"
 	},
 	"backgroundColors": [
-		"#2779BD",
-		"#DD7437",
-		"#FCF9BA",
-		"#D55ABD",
-		"#FD0336",
-		"#0C5B45",
-		"#5056C9",
-		"#8BA670"
+		"#16007b"
 	],
 	"artImages": [
 		{
@@ -40,6 +33,10 @@
 		{
 			"id": "607165f3e5fecea7",
 			"url": "/images/art/607165f3e5fecea7.jpg"
+		},
+		{
+			"id": "d375658e0cda7a33",
+			"url": "/images/art/d375658e0cda7a33.png"
 		}
 	],
 	"currentArtImageId": "944e9cdefe46b196",
@@ -47,33 +44,37 @@
 		{
 			"id": "",
 			"url": ""
+		},
+		{
+			"id": "d375658e0cda7a33",
+			"url": "/images/background/d375658e0cda7a33.png"
 		}
 	],
-	"currentBackgroundImageId": "",
+	"currentBackgroundImageId": "d375658e0cda7a33",
 	"socialButtons": [
 		{
 			"id": "github",
-			"type": "github",
-			"value": "https://github.com/AmisKwok",
-			"label": "Github",
+			"type": "link",
+			"value": "https://www.yxmmc.fun",
+			"label": "悦星明MC",
 			"order": 1
 		},
 		{
 			"id": "juejin",
-			"type": "gitee",
-			"value": "https://gitee.com/AmisKwok",
+			"type": "wechat",
+			"value": "/images/social-buttons/2989af3d55de02c4.png",
 			"label": "Gitee",
 			"order": 2
 		},
 		{
 			"id": "button-1771682789690",
 			"type": "qq",
-			"value": "/images/social-buttons/ec4f06a94c077b3b.png",
+			"value": "361794609",
 			"label": "",
 			"order": 3
 		}
 	],
-	"clockShowSeconds": false,
+	"clockShowSeconds": true,
 	"summaryInContent": false,
 	"isCachePem": false,
 	"hideEditButton": false,
@@ -81,15 +82,15 @@
 	"currentHatIndex": 24,
 	"hatFlipped": false,
 	"enableChristmas": true,
-	"enableBackgroundBlur": false,
+	"enableBackgroundBlur": true,
 	"beian": {
 		"text": "",
 		"link": ""
 	},
 	"waline": {
 		"serverURL": "https://www.amisweb.online/",
-		"theme": "auto",
-		"dark": "auto",
+		"theme": "dark",
+		"dark": "dark",
 		"options": {
 			"requiredMeta": [
 				"nick",
