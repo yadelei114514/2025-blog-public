@@ -60,18 +60,18 @@
 			"order": 1
 		},
 		{
-			"id": "juejin",
-			"type": "wechat",
-			"value": "/images/social-buttons/2989af3d55de02c4.png",
-			"label": "Gitee",
-			"order": 2
-		},
-		{
 			"id": "button-1771682789690",
 			"type": "qq",
 			"value": "361794609",
 			"label": "",
 			"order": 3
+		},
+		{
+			"id": "button-1773477240147",
+			"type": "wechat",
+			"value": "/images/social-buttons/2989af3d55de02c4.png",
+			"label": "",
+			"order": 2
 		}
 	],
 	"clockShowSeconds": true,
