@@ -1,0 +1,13 @@
+{
+  "title": "一边封锁中国一边“偷家”DeepSeek：Anthropic为何如何双标恶心？",
+  "tags": [
+    "AI",
+    "吐槽",
+    "大模型"
+  ],
+  "date": "2026-04-03T20:10",
+  "summary": "Anthropic（Claude母公司）以“安全伦理”自居，对中国用户严格封锁。然而，其最新模型Claude Sonnet 4.6在测试中竟自称由中国DeepSeek或Qwen开发。这暴露了Anthropic在训练中使用了DeepSeek等中国模型的数据，且数据清洗不彻底。文章批评Anthropic一边封锁中国，一边“窃取”中国AI数据以提升自身能力，其“安全伦理”和“原创”主张尽显虚伪和双标。",
+  "cover": "/blogs/SB-Anthropic/8976c70d550fa7d5.webp",
+  "hidden": false,
+  "category": ""
+}
