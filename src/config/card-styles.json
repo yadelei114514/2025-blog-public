@@ -103,7 +103,7 @@
 		"order": 11,
 		"offsetX": null,
 		"offsetY": null,
-		"enabled": false
+		"enabled": true
 	},
 	"commentCard": {
 		"width": 1000,

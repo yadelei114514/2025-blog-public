@@ -75,26 +75,27 @@
 		}
 	],
 	"clockShowSeconds": true,
-	"summaryInContent": false,
+	"summaryInContent": true,
 	"isCachePem": false,
 	"hideEditButton": false,
 	"enableCategories": true,
 	"currentHatIndex": 24,
 	"hatFlipped": false,
 	"enableChristmas": true,
-	"enableBackgroundBlur": false,
+	"enableBackgroundBlur": true,
 	"beian": {
-		"text": "<img src=\"http://icp.yuncheng.moe/favicon.ico\" width=\"20\" height=\"20\" style=\"vertical-align: middle; margin-right: 5px;\">团ICP备20266666号",
-		"link": "http://icp.yuncheng.moe/icp/20266666"
+		"text": "<img src=\"https://icp.yuncheng.moe/favicon.ico\" width=\"20\" height=\"20\" style=\"vertical-align: middle; margin-right: 5px;\">团ICP备20266666号",
+		"link": "https://icp.yuncheng.moe/icp/20266666"
 	},
 	"waline": {
 		"serverURL": "https://www.amisweb.online/",
-		"theme": "dark",
-		"dark": "dark",
+		"theme": "auto",
+		"dark": "auto",
 		"options": {
 			"requiredMeta": [
 				"nick",
-				"mail"
+				"mail",
+				"link"
 			],
 			"pageview": true,
 			"imageUploader": false,
