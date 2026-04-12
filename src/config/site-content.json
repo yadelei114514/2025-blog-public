@@ -84,8 +84,8 @@
 	"enableChristmas": true,
 	"enableBackgroundBlur": false,
 	"beian": {
-		"text": "",
-		"link": ""
+		"text": "<img src=\"http://icp.yuncheng.moe/favicon.ico\" width=\"20\" height=\"20\" style=\"vertical-align: middle; margin-right: 5px;\">团ICP备20266666号",
+		"link": "http://icp.yuncheng.moe/icp/20266666"
 	},
 	"waline": {
 		"serverURL": "https://www.amisweb.online/",
