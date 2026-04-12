@@ -84,7 +84,7 @@
 	"enableChristmas": true,
 	"enableBackgroundBlur": true,
 	"beian": {
-		"text": "<img src=\"https://icp.yuncheng.moe/favicon.ico\" width=\"20\" height=\"20\" style=\"vertical-align: middle; margin-right: 5px;\">团ICP备20266666号",
+		"text": "团ICP备20266666号",
 		"link": "https://icp.yuncheng.moe/icp/20266666"
 	},
 	"waline": {
