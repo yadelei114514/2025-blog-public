@@ -5,7 +5,7 @@ import siteContent from '@/config/site-content.json'
 import blogIndex from '@/../public/blogs/index.json'
 import type { BlogIndexItem } from '@/app/blog/types'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.yysuni.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.yadelei.top'
 const FEED_PATH = '/rss.xml'
 const SITE_ORIGIN = SITE_URL.replace(/\/$/, '')
 const FEED_URL = `${SITE_ORIGIN}${FEED_PATH}`
@@ -67,7 +67,7 @@ const serializeItem = (item: BlogIndexItem): string => {
 	const title = escapeXml(item.title || item.slug)
 	const description = wrapCdata(item.summary || '')
 	const pubDate = new Date(item.date).toUTCString()
-	const categories = (item.tags || [])
+	const categories = (item.标签 || [])
 		.filter(Boolean)
 		.map(tag => `<category>${escapeXml(tag)}</category>`)
 		.join('')
