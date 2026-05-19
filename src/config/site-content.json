@@ -35,22 +35,18 @@
 			"url": "/images/art/607165f3e5fecea7.jpg"
 		},
 		{
-			"id": "d375658e0cda7a33",
-			"url": "/images/art/d375658e0cda7a33.png"
+			"id": "4e09e95cc5812913",
+			"url": "/images/art/4e09e95cc5812913.webp"
 		}
 	],
-	"currentArtImageId": "d375658e0cda7a33",
+	"currentArtImageId": "cat",
 	"backgroundImages": [
 		{
 			"id": "",
 			"url": ""
-		},
-		{
-			"id": "d375658e0cda7a33",
-			"url": "/images/background/d375658e0cda7a33.png"
 		}
 	],
-	"currentBackgroundImageId": "d375658e0cda7a33",
+	"currentBackgroundImageId": "",
 	"socialButtons": [
 		{
 			"id": "github",
