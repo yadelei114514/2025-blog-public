@@ -43,6 +43,6 @@ https://www.yadelei.top/rss.xml
 网站简介：
 网站图标 URL：
 ```
-4. 等待审核，我们会在 <font color="red">48 小时内</font>审核您的网站并保留您的联系方式，审核后会<font color="red">第一时间进行通知</font>
+3. 等待审核，我们会在 <font color="red">48 小时内</font>审核您的网站并保留您的联系方式，审核后会<font color="red">第一时间进行通知</font>
 ---
 快来申请吧！
