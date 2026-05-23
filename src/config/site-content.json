@@ -44,9 +44,13 @@
 		{
 			"id": "",
 			"url": ""
+		},
+		{
+			"id": "url-1779494785023",
+			"url": "https://www.yadelei.top/images/art/4e09e95cc5812913.webp"
 		}
 	],
-	"currentBackgroundImageId": "",
+	"currentBackgroundImageId": "url-1779494785023",
 	"socialButtons": [
 		{
 			"id": "github",
